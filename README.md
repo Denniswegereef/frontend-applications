@@ -32,3 +32,7 @@
 * Thursday
 * Friday
   * _FINAL DATE_
+
+
+  TO DO
+  * Browserrouter dynamisch maken
