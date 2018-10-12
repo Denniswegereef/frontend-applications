@@ -14,9 +14,10 @@
 * Wednesday
   * Got react from Titus
   * Bootcamp about setting up your project, I knew the most of the things but it has some intersting points how to include them.
+  * In depth presentation about the project
 * Thursday
   * Watched alot of tutorials about react (the net ninja)
-  * Getting ued to it
+  * Getting used to it
   * Helped some other students
 * Friday
   * Started my offical project, setting up everything the linter components started a readme. Talked with Titus about it that I just had to start it, so there's that today. Setting everything up
