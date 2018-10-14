@@ -23,7 +23,9 @@
   * Started my offical project, setting up everything the linter components started a readme. Talked with Titus about it that I just had to start it, so there's that today. Setting everything up
   * Did some tutorials
 * Saturday
+  * Nothing :(
 * Sunday
+  * Split every task and looked how to implement everything, than started working on the tasks
 
 ### Week 2
 * Monday
@@ -34,5 +36,29 @@
   * _FINAL DATE_
 
 
-  TO DO
-  * Browserrouter dynamisch maken
+  TO DO FROM SUNDAY TO THE DEADLINE
+
+  - [ ] Add SCSS/SASS support to webpack
+  - [ ] Style the page so it has some kind of visual aspect to it?
+  - [ ] Create compontents switch user, catagories, input fields thingy, and the calculator
+  - [ ] Make a JSON with the question data
+  - [ ] Show catagories based of that data
+  - [ ] Routes based of the catagories (change it in the input fields thingy when clicked)
+  - [ ] Reusuable input UI elements
+  - [ ] Use REDUX to store the data and calculations
+  - [ ] Make it visual appealing
+
+POSSIBLE IDEAS TO IMPLEMENT
+- [ ] Export PDF
+- [ ] Switch users locally
+- [ ] Don't use data when refreshing the page (localstorage)
+
+
+Links I've used
+
+* [Create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
+* [Added SCSS/SASS support](https://medium.com/@oreofeolurin/configuring-scss-with-react-create-react-app-1f563f862724)
+* [Tutorial the net ninja](https://www.youtube.com/watch?v=OxIDLw0M-m0&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
+* []()
+* []()
+* []()
