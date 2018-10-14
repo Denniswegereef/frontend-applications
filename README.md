@@ -39,7 +39,7 @@
   TO DO FROM SUNDAY TO THE DEADLINE
 
   - [X] Add SCSS/SASS support to webpack
-  - [ ] Try to find out how to use scoped css in components
+  - [X] Try to find out how to use scoped css in components
   - [ ] Style the page so it has some kind of visual aspect to it?
   - [ ] Create compontents switch user, catagories, input fields thingy, and the calculator
   - [ ] Make a JSON with the question data
@@ -50,6 +50,7 @@
   - [ ] Make it visual appealing
 
 POSSIBLE IDEAS TO IMPLEMENT
+- [ ] Introduction page, popup, wizard whatever
 - [ ] Export PDF
 - [ ] Switch users locally
 - [ ] Don't use data when refreshing the page (localstorage)
@@ -60,6 +61,6 @@ Links I've used
 * [Create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
 * [Added SCSS/SASS support](https://medium.com/@oreofeolurin/configuring-scss-with-react-create-react-app-1f563f862724)
 * [Tutorial the net ninja](https://www.youtube.com/watch?v=OxIDLw0M-m0&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
-* []()
+* [Sanatize.css](https://github.com/csstools/sanitize.css)
 * []()
 * []()

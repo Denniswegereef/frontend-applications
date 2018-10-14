@@ -1,0 +1,41 @@
+@import 'variables/all';
+
+.header {
+  height: 75px;
+  width: 100%;
+  background-color: $black;
+  display: flex;
+  justify-content: space-between;
+  padding: $paddingDefault;
+  align-items: center;
+  &-user {
+
+  }
+  &-navigation {
+    ul {
+      display: flex;
+      list-style-type: none;
+      li {
+        margin-left: $marginDefault;
+      }
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+
+
+header {
+  height: 50px;
+  width: 100%;
+  background-color: $black;
+  color: $white;
+  a {
+    color: $white;
+  }
+}
