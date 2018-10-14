@@ -1,29 +1,25 @@
-// import React, { Component } from 'react'
-// import data from '../data/data.json';
-//
-// class Catagories extends Component {
-//   render () {
-//     return (
-//       <div>
-//         {
-//           data.map(function(movie){
-//             return <li>{movie.id} - {movie.title}</li>;
-//           })
-//         }
-//       </div>
-//     )
-//   }
-// }
-//
-// export default Catagories
-
-
 import React, { Component } from 'react'
+import data from '../../data/data.json';
+import questions from '../../data/questions.json';
+import CatagorieBlock from '../../components/UI/CatagorieBlock.js'
+import '../../scss/catagories.scss';
 
 class Catagories extends Component {
   render() {
+    let questionsList = new Array()
+
+    const catagoriesOneOne = questions.map(question => {
+      if(!questionsList.includes(question.Categorie)) {
+        questionsList.push(question.Categorie)
+      }
+    })
+
     return (
-      <div>Catagories</div>
+      <div className="catagories">
+        <ul>
+          <CatagorieBlock questions={ questionsList }/>
+        </ul>
+      </div>
     )
   }
 }

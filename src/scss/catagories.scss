@@ -1,0 +1,19 @@
+.catagories {
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  p {
+    color: yellow;
+  }
+}
+
+.catagorie-single {
+  padding: .5rem;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
