@@ -38,7 +38,8 @@
 
   TO DO FROM SUNDAY TO THE DEADLINE
 
-  - [ ] Add SCSS/SASS support to webpack
+  - [X] Add SCSS/SASS support to webpack
+  - [ ] Try to find out how to use scoped css in components
   - [ ] Style the page so it has some kind of visual aspect to it?
   - [ ] Create compontents switch user, catagories, input fields thingy, and the calculator
   - [ ] Make a JSON with the question data
