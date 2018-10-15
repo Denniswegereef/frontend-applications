@@ -1,16 +1,26 @@
-import React from 'react';
-import '../../scss/catagories.scss';
+import React from 'react'
+import '../../scss/catagories.scss'
+import Inputs from '../risicoIndicatie/Inputs.js'
+
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+
+import slugify from 'slugify'
 
 const CatagorieBlock = ({ questions }) => {
-  const questionSingle = questions.map(question => {
+
+  const single_catagory_name = questions.map(question => {
+    let key = slugify(question, {lower: true})
+
     return (
-      <li className="catagorie-single"><a>{ question }</a></li>
+      <li className="catagorie-single" key={ key }>
+        <Link to={ '/category/' + key }>{ question }</Link>
+      </li>
     )
   })
 
   return (
     <React.Fragment>
-      { questionSingle }
+      {  single_catagory_name }
     </React.Fragment>
   )
 }

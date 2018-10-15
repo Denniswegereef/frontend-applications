@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
-import Inputs from '../components/risicoIndicatie/Inputs.js'
-import Catagories from '../components/risicoIndicatie/Catagories.js'
-import Calculation from '../components/risicoIndicatie/Calculation.js'
+import QuestionForm from '../components/risicoIndicatie/QuestionForm.js'
 
-import '../scss/calculator.scss';
+const RisicoIndicatie = ({ match }) => (
+  <div>
+    <h2>Vragen</h2>
+    <ul>
+      <li>
+        <Link to={`${match.url}/herkomst`}>Herkomst</Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/ouders`}>Ouders</Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/vragen`}>Vraag</Link>
+      </li>
+    </ul>
 
-  class RisicoIndicatie extends Component {
-    render() {
-      return (
-        <div className="calculator">
-          <Catagories/>
-          <Inputs/>
-          <Calculation/>
-        </div>
-      )
-    }
-}
+    <Route path={`${match.path}/:category_name`} component={QuestionForm} />
+    <Route exact path={match.path} render={() => <h3>Geen catagorie gekozen.</h3>}
+    />
+  </div>
+);
 
 export default RisicoIndicatie

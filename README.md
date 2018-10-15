@@ -29,6 +29,7 @@
 
 ### Week 2
 * **Monday**
+  *
 * **Tuesday**
 * **Wednesday**
 * **Thursday**
@@ -54,6 +55,11 @@ POSSIBLE IDEAS TO IMPLEMENT
 - [ ] Export PDF
 - [ ] Switch users locally
 - [ ] Don't use data when refreshing the page (localstorage)
+- [ ] Export anoniem
+- [ ] Insighs if the percentage is higher
+- [ ] Postive negative points
+- [ ] Notes? Open questions
+- [ ]
 
 
 Links I've used
@@ -62,5 +68,5 @@ Links I've used
 * [Added SCSS/SASS support](https://medium.com/@oreofeolurin/configuring-scss-with-react-create-react-app-1f563f862724)
 * [Tutorial the net ninja](https://www.youtube.com/watch?v=OxIDLw0M-m0&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
 * [Sanatize.css](https://github.com/csstools/sanitize.css)
-* []()
+* [Slugify](https://www.npmjs.com/package/slugify)
 * []()

@@ -1,23 +1,21 @@
 import React, { Component } from 'react'
-import data from '../../data/data.json';
 import questions from '../../data/questions.json';
 import CatagorieBlock from '../../components/UI/CatagorieBlock.js'
 import '../../scss/catagories.scss';
 
 class Catagories extends Component {
   render() {
-    let questionsList = new Array()
+    // Shout out naar Titus
+    const catagories = questions
+      .map(question => question.Categorie)
+      .filter((catagorie, index, all) => all.indexOf(catagorie) == index)
 
-    const catagoriesOneOne = questions.map(question => {
-      if(!questionsList.includes(question.Categorie)) {
-        questionsList.push(question.Categorie)
-      }
-    })
+    console.log(catagories)
 
     return (
       <div className="catagories">
         <ul>
-          <CatagorieBlock questions={ questionsList }/>
+          <CatagorieBlock questions={ catagories }/>
         </ul>
       </div>
     )
