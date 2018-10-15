@@ -2,24 +2,15 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
 import QuestionForm from '../components/risicoIndicatie/QuestionForm.js'
+import Categories from '../components/risicoIndicatie/Categories.js'
 
 const RisicoIndicatie = ({ match }) => (
   <div>
-    <h2>Vragen</h2>
-    <ul>
-      <li>
-        <Link to={`${match.url}/herkomst`}>Herkomst</Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/ouders`}>Ouders</Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/vragen`}>Vraag</Link>
-      </li>
-    </ul>
+    <h2>Catagoriën</h2>
+    <Categories match={ match }/>
 
     <Route path={`${match.path}/:category_name`} component={QuestionForm} />
-    <Route exact path={match.path} render={() => <h3>Geen catagorie gekozen.</h3>}
+    <Route exact path={match.path} component={QuestionForm}
     />
   </div>
 );

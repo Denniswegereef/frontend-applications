@@ -1,10 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 
-const QuestionForm = ({ match }) => (
-  <div>
-    <h3>Vragen over {match.params.category_name}</h3>
-  </div>
-);
+class QuestionForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { category: null };
+  }
+
+  render() {
+    return (
+      <h3>Vragen over { this.props.match.params.category_name }</h3>
+    )
+  }
+}
 
 export default QuestionForm

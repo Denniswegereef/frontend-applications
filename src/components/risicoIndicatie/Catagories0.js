@@ -3,6 +3,7 @@ import questions from '../../data/questions.json';
 import CatagorieBlock from '../../components/UI/CatagorieBlock.js'
 import '../../scss/catagories.scss';
 
+
 class Catagories extends Component {
   render() {
     // Shout out naar Titus
