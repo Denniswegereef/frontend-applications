@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import questions from '../../data/questions.json';
+import questions from '../../data/questions.json'
 import slugify from 'slugify'
 
 class QuestionForm extends Component {
@@ -11,14 +11,15 @@ class QuestionForm extends Component {
     }
   }
 
-
-
   componentDidMount() {
     let currentParam  = this.props.currentParam
 
     this.setState({
-      category: currentParam
+      category: currentParam,
     })
+
+    // Handle state when component first loads
+    this.handleLocalStorage()
   }
 
   // Trigger a function when new props enter the component
@@ -29,11 +30,22 @@ class QuestionForm extends Component {
       this.setState({
         category: currentParam
       })
+
+      // Set localstorage whebn component update
+      this.handleLocalStorage()
+    }
+  }
+
+  handleLocalStorage = () => {
+    if (localStorage.getItem(this.props.currentParam)) {
+      console.log('Deze bestaat in de local')
+      this.setState({
+        activeValue: localStorage.getItem(this.props.currentParam)
+      })
     }
   }
 
   handleActive = (element) => {
-    console.log(element)
     // ZET CATAGORY IN LOCALSTORAGE
     // ZET ANTWOORD IN LOCALSTORAGE
     localStorage.setItem(this.props.currentParam, element.target.value);
@@ -44,6 +56,9 @@ class QuestionForm extends Component {
   }
 
   render() {
+    //console.log(this)
+    //console.log(localStorage.getItem('slachtoffer'))
+
     // Loop to find the right questions
     let speceficQuestion = questions.map((question, index) => {
       let slugifyCategory = slugify(question.Categorie, {lower: true})
@@ -51,7 +66,6 @@ class QuestionForm extends Component {
       // Find the right questions based on the props
       if (slugifyCategory === this.state.category) {
         let currentQuestion = questions[index]
-        console.log(localStorage.getItem(this.props.currentParam))
         return (
           <option
             key={ currentQuestion.Name }
@@ -59,14 +73,8 @@ class QuestionForm extends Component {
             { currentQuestion.Name }
           </option>
         )
-      } else {
-        // HIER MOET EEN SELECT KOMEN
-        return 'nothing'
       }
     })
-
-    var message='You selected '+this.state.activeValue;
-
     return (
       <div className="risico-indicatie-questionForm">
       <h3>Vragen over { this.state.category }</h3>
@@ -80,9 +88,6 @@ class QuestionForm extends Component {
           </option>
           { speceficQuestion }
         </select>
-
-         <p>{message}</p>
-
       </form>
     </div>
     )

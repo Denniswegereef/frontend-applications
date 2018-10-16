@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 
 import Categories from '../components/risicoIndicatie/Categories.js'
 import QuestionForm from '../components/risicoIndicatie/QuestionForm.js'
@@ -11,8 +11,12 @@ class RisicoIndicatie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentState: null
+      currentState: this.props.location.pathname.split("/").pop()
     };
+  }
+
+  componentDidMount() {
+    console.log(this.state.currentState)
   }
 
   handleCalculation = (number) => {
@@ -21,7 +25,7 @@ class RisicoIndicatie extends Component {
 
   handleParams = (param) => {
     this.setState({
-      currentState:param
+      currentState: param
     })
   }
 
@@ -44,4 +48,4 @@ class RisicoIndicatie extends Component {
 }
 
 
-export default RisicoIndicatie
+export default withRouter(RisicoIndicatie)

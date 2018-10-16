@@ -43,15 +43,15 @@
   - [X] Try to find out how to use scoped css in components
   - [ ] Style the page so it has some kind of visual aspect to it?
   - [X] Create compontents switch user, catagories, input fields thingy, and the calculator
-  - [ ] Make a JSON with the question data
-  - [ ] Show catagories based of that data
-  - [ ] Routes based of the catagories (change it in the input fields thingy when clicked)
-  - [ ] Reusuable input UI elements
+  - [X] Make a JSON with the question data
+  - [X] Show catagories based of that data
+  - [X] Routes based of the catagories (change it in the input fields thingy when clicked)
+  - [X] Reusuable input UI elements
   - [ ] Use REDUX to store the data and calculations
   - [ ] Make it visual appealing
 
 POSSIBLE IDEAS TO IMPLEMENT
-- [ ] Introduction page, popup, wizard whatever
+- [X] Introduction page, popup, wizard whatever
 - [ ] Export PDF
 - [ ] Switch users locally
 - [ ] Don't use data when refreshing the page (localstorage)
