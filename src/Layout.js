@@ -16,13 +16,12 @@ import './scss/index.scss';
 
 const Layout = () => (
   <Router>
-    <div>
+    <React.Fragment>
       <Header/>
-      <hr />
       <Route exact path="/" component={Home} />
       <Route path="/contact" component={Contact} />
       <Route path="/risico-indicatie" component={RisicoIndicatie} />
-    </div>
+    </React.Fragment>
   </Router>
 );
 
