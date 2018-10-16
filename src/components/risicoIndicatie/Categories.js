@@ -23,7 +23,8 @@ class Categories extends Component {
 
       return (
         <li key={slugifyName}>
-            <Link to={`${match}/${slugifyName}`}>{ question }</Link>
+            <Link to={`${match}/${slugifyName}`}
+            onClick={() => {this.props.handleParams(slugifyName)}}>{ question }</Link>
         </li>
       )
     })

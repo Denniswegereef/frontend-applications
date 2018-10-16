@@ -12,17 +12,16 @@ class QuestionForm extends Component {
 
   // Trigger a function when new props enter the component
   componentDidUpdate(prevProps, prevState) {
-    let prevPropsCategory = prevProps.match.params.category_name
-    let stateCategory = this.props.match.params.category_name
+    let currentParam  = this.props.currentParam
 
-    // Prevent infinitem loop
-    if (prevPropsCategory !== stateCategory) {
+    if (currentParam !== prevProps.currentParam) {
+
       this.setState({
-        category: stateCategory
+        category: currentParam
       })
 
       // Trigger render again
-      this.forceUpdate();
+      //this.forceUpdate();
     }
   }
 
@@ -36,7 +35,8 @@ class QuestionForm extends Component {
         return (
           <option
             key={ questions[index].Name }
-            value={ questions[index].Coefficients }>
+            value={ questions[index].Coefficients }
+            >
             { questions[index].Name }
           </option>
         )
