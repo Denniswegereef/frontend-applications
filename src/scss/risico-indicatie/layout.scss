@@ -1,6 +1,15 @@
+@import '../variables/all';
+
 .risico-indicatie {
   background-color: lightgrey;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 100px;
+  height: 100vh;
+  background-color: $white;
+  &-header {
+    background-color: $mainColorLight;
+  }
+  &-content {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+  }
 }

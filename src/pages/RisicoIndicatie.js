@@ -34,14 +34,18 @@ class RisicoIndicatie extends Component {
 
     return (
       <div className="risico-indicatie">
-        <Categories match={ match } handleParams={this.handleParams}/>
-        <Route
-          path={`${match.path}/:category_name`}
-          render={()=><QuestionForm
-          currentParam={this.state.currentState}
-          handleCalculation={this.handleCalculation} />}
-        />
-        <Calculation/>
+        <div className="risico-indicatie-header">
+          <Calculation/>
+        </div>
+        <div className="risico-indicatie-content">
+          <Categories match={ match } handleParams={this.handleParams}/>
+          <Route
+            path={`${match.path}/:category_name`}
+            render={()=><QuestionForm
+            currentParam={this.state.currentState}
+            handleCalculation={this.handleCalculation} />}
+          />
+        </div>
       </div>
     )
   }

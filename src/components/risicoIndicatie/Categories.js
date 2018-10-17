@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import questions from '../../data/questions.json';
 import slugify from 'slugify'
 
 import '../../scss/risico-indicatie/categories.scss'
+
+import testFlask from '../../images/category-icons/flask.svg';
 
 class Categories extends Component {
   render() {
@@ -23,8 +25,11 @@ class Categories extends Component {
 
       return (
         <li key={slugifyName}>
-            <Link to={`${match}/${slugifyName}`}
-            onClick={() => {this.props.handleParams(slugifyName)}}>{ question }</Link>
+            <NavLink to={`${match}/${slugifyName}`}
+            onClick={() => {this.props.handleParams(slugifyName)}}>
+            <img src={testFlask}/>
+            <p>{ question}</p>
+          </NavLink>
         </li>
       )
     })
@@ -32,10 +37,10 @@ class Categories extends Component {
     // Render everything to the page
     return (
       <div className="risico-indicatie-categories">
-      <h1>Categoriën</h1>
-      <ul>
-        { categorie_single }
-      </ul>
+        <h1>Categoriën</h1>
+          <ul>
+            { categorie_single }
+          </ul>
       </div>
     )
   }

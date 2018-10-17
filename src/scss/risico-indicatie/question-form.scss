@@ -1,0 +1,18 @@
+@import '../variables/all';
+
+.risico-indicatie-questionForm {
+  position: relative;
+  margin: 0 1rem;
+  &-content {
+    position: absolute;
+    width: 100%;
+    top: -80px;
+    background-color: $white;
+    height: 100%;
+    padding: $paddingDefault * 2;
+    box-shadow: -3px 50px 50px -10px $lightColor;
+    h2 {
+      margin-bottom: $marginDefault;
+    }
+  }
+}

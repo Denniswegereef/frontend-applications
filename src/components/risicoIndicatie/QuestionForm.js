@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import questions from '../../data/questions.json'
 import slugify from 'slugify'
 
+import '../../scss/risico-indicatie/question-form.scss'
+
 class QuestionForm extends Component {
   constructor(props) {
     super(props);
@@ -77,18 +79,20 @@ class QuestionForm extends Component {
     })
     return (
       <div className="risico-indicatie-questionForm">
-      <h3>Vragen over { this.state.category }</h3>
-      <form action="">
-        <select
-          value={this.state.activeValue}
-          onChange={this.handleActive}>
-          <option
-            value='none'>
-            Onbekend
-          </option>
-          { speceficQuestion }
-        </select>
-      </form>
+        <div className="risico-indicatie-questionForm-content">
+          <h2>Vragen over { this.state.category }</h2>
+          <form action="">
+            <select
+              value={this.state.activeValue}
+              onChange={this.handleActive}>
+              <option
+                value='none'>
+                Niet bekend
+              </option>
+              { speceficQuestion }
+            </select>
+          </form>
+      </div>
     </div>
     )
   }

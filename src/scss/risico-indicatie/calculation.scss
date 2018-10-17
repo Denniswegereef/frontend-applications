@@ -1,3 +1,19 @@
-.calculation {
-  
+@import '../variables/all';
+
+.risico-indicatie-calculation {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  flex-direction: column;
+  h2 {
+    color: $white;
+    margin: 0;
+    padding: 0;
+  }
+  span {
+    color: $white;
+    font-size: 3rem;
+  }
 }

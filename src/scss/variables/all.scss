@@ -1,4 +1,5 @@
 // Combine all SCSS files
 
-@import 'variables/colors';
-@import 'variables/spacing';
+@import './colors';
+@import './spacing';
+@import './mixins';
