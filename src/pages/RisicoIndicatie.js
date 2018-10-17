@@ -11,7 +11,8 @@ class RisicoIndicatie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentState: this.props.location.pathname.split("/").pop()
+      currentState: this.props.location.pathname.split("/").pop(),
+      calculation: null
     };
   }
 
@@ -19,13 +20,19 @@ class RisicoIndicatie extends Component {
     // console.log(this.state.currentState)
   }
 
-  handleCalculation = (number) => {
-    console.log('FIRED G WITH ' + number)
+  handleCalculation = (data) => {
+    if (data) {
+      this.setState({
+        calculation: Math.floor(Math.random() * 100)
+      })
+    }
   }
 
-  handleParams = (param) => {
+  handleParams = (param, name) => {
+    console.log(name)
     this.setState({
-      currentState: param
+      currentState: param,
+      name: name
     })
   }
 
@@ -35,7 +42,7 @@ class RisicoIndicatie extends Component {
     return (
       <div className="risico-indicatie">
         <div className="risico-indicatie-header">
-          <Calculation/>
+          <Calculation calculation={this.state.calculation}/>
         </div>
         <div className="risico-indicatie-content">
           <Categories match={ match } handleParams={this.handleParams}/>
@@ -43,6 +50,7 @@ class RisicoIndicatie extends Component {
             path={`${match.path}/:category_name`}
             render={()=><QuestionForm
             currentParam={this.state.currentState}
+            currentName={this.state.name}
             handleCalculation={this.handleCalculation} />}
           />
         </div>

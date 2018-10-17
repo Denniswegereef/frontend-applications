@@ -3,6 +3,7 @@ import questions from '../../data/questions.json'
 import slugify from 'slugify'
 
 import '../../scss/risico-indicatie/question-form.scss'
+import QuestionReset from '../UI/QuestionReset.js'
 
 class QuestionForm extends Component {
   constructor(props) {
@@ -47,6 +48,8 @@ class QuestionForm extends Component {
     })
 
     this.handleLocalStorage(category, value)
+
+    this.props.handleCalculation(weight)
   }
 
   render() {
@@ -79,6 +82,9 @@ class QuestionForm extends Component {
     return (
       <div className="risico-indicatie-questionForm">
         <div className="risico-indicatie-questionForm-content">
+
+          <QuestionReset/>
+
           <h2>Vragen over { this.props.currentParam }</h2>
           <form action="">
             <label type="radio">

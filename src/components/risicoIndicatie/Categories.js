@@ -22,11 +22,11 @@ class Categories extends Component {
     const categorie_single = categories.map(question => {
       // Make the name browser-friendly
       let slugifyName = slugify(question, {lower: true})
-      
+
       return (
         <li key={slugifyName}>
             <NavLink to={`${match}/${slugifyName}`}
-            onClick={() => {this.props.handleParams(slugifyName)}}>
+            onClick={() => {this.props.handleParams(slugifyName, question)}}>
             <img src={testFlask}/>
             <p>{ question}</p>
           </NavLink>
