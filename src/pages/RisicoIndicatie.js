@@ -16,7 +16,7 @@ class RisicoIndicatie extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state.currentState)
+    // console.log(this.state.currentState)
   }
 
   handleCalculation = (number) => {

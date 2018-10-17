@@ -8,19 +8,21 @@ class QuestionForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: null,
-      activeValue: 'onbekend'
+      currentParam: null
+    }
+  }
+
+  handleLocalStorage = (category, value) => {
+    localStorage.setItem(category, value)
+
+    if(localStorage.getItem(this.props.currentParam)) {
+      this.setState({
+        [this.props.currentParam]: localStorage.getItem(this.props.currentParam)
+      })
     }
   }
 
   componentDidMount() {
-    let currentParam  = this.props.currentParam
-
-    this.setState({
-      category: currentParam,
-    })
-
-    // Handle state when component first loads
     this.handleLocalStorage()
   }
 
@@ -30,7 +32,7 @@ class QuestionForm extends Component {
 
     if (currentParam !== prevProps.currentParam) {
       this.setState({
-        category: currentParam
+        currentParam: currentParam
       })
 
       // Set localstorage whebn component update
@@ -38,59 +40,57 @@ class QuestionForm extends Component {
     }
   }
 
-  handleLocalStorage = () => {
-    if (localStorage.getItem(this.props.currentParam)) {
-      console.log('Deze bestaat in de local')
-      this.setState({
-        activeValue: localStorage.getItem(this.props.currentParam)
-      })
-    }
-  }
-
-  handleActive = (element) => {
-    // ZET CATAGORY IN LOCALSTORAGE
-    // ZET ANTWOORD IN LOCALSTORAGE
-    localStorage.setItem(this.props.currentParam, element.target.value);
-
+  handleActive = (category, value, weight) => {
+    // Put in localstorage
     this.setState({
-      activeValue: element.target.value
-    });
+      [category]: value
+    })
+
+    this.handleLocalStorage(category, value)
   }
 
   render() {
-    //console.log(this)
-    //console.log(localStorage.getItem('slachtoffer'))
-
     // Loop to find the right questions
     let speceficQuestion = questions.map((question, index) => {
       let slugifyCategory = slugify(question.Categorie, {lower: true})
 
       // Find the right questions based on the props
-      if (slugifyCategory === this.state.category) {
+      if (slugifyCategory === this.props.currentParam) {
+        //console.log(question)
         let currentQuestion = questions[index]
+
+        // Check the state if there is a checked variant of this category and put it on true for the right one
+        let checkRadio
+        this.state[slugifyCategory] === question.Coefficients ? checkRadio = true : checkRadio = false
+
         return (
-          <option
-            key={ currentQuestion.Name }
-            value={ currentQuestion.Coefficients }>
-            { currentQuestion.Name }
-          </option>
+          <label key={ currentQuestion.Name }>
+            <input
+              name={ slugifyCategory }
+              type="radio"
+              checked={checkRadio}
+              onChange={() => {this.handleActive(slugifyCategory, currentQuestion.Coefficients, currentQuestion.Gewicht)}}
+              value={ currentQuestion.Coefficients }/>
+              <span>{ currentQuestion.Name}</span>
+          </label>
         )
       }
     })
     return (
       <div className="risico-indicatie-questionForm">
         <div className="risico-indicatie-questionForm-content">
-          <h2>Vragen over { this.state.category }</h2>
+          <h2>Vragen over { this.props.currentParam }</h2>
           <form action="">
-            <select
-              value={this.state.activeValue}
-              onChange={this.handleActive}>
-              <option
-                value='none'>
-                Niet bekend
-              </option>
-              { speceficQuestion }
-            </select>
+            <label type="radio">
+              <input
+                type="radio"
+                checked={!localStorage.getItem(this.props.currentParam) || localStorage.getItem(this.props.currentParam) === 'onbekend'}
+                name={this.props.currentParam}
+                onChange={() => {this.handleActive(this.props.currentParam, 'onbekend')}}
+              />
+              <span>Onbekend</span>
+            </label>
+            { speceficQuestion }
           </form>
       </div>
     </div>
