@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../../scss/risico-indicatie/questionreset.scss'
 
+import slugify from 'slugify'
 
 class QuestionReset extends Component {
   handleReset() {
