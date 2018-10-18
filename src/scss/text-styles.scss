@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i');
 @import 'variables/all';
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
   font-family: 'Cabin', sans-serif;
@@ -11,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: .6rem;
+  margin-bottom: 0.6rem;
 }
 
 h2 {
@@ -23,5 +28,5 @@ h3 {
 }
 
 p {
-    font-family: 'Cabin', sans-serif;
+  font-family: 'Cabin', sans-serif;
 }

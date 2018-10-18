@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Route, withRouter } from "react-router-dom";
+import React, {Component} from 'react';
+import {Route, withRouter} from "react-router-dom";
 
 import Categories from '../components/risicoIndicatie/Categories.js'
 import QuestionForm from '../components/risicoIndicatie/QuestionForm.js'
@@ -16,10 +16,6 @@ class RisicoIndicatie extends Component {
     };
   }
 
-  componentDidMount() {
-    // console.log(this.state.currentState)
-  }
-
   handleCalculation = (data) => {
     if (data) {
       this.setState({
@@ -30,34 +26,31 @@ class RisicoIndicatie extends Component {
 
   handleParams = (param, name) => {
     console.log(name)
-    this.setState({
-      currentState: param,
-      name: name
-    })
+    this.setState({currentState: param, name: name})
   }
 
   render() {
     let match = this.props.match
 
-    return (
-      <div className="risico-indicatie">
-        <div className="risico-indicatie-header">
-          <Calculation calculation={this.state.calculation}/>
-        </div>
-        <div className="risico-indicatie-content">
-          <Categories match={ match } handleParams={this.handleParams}/>
-          <Route
-            path={`${match.path}/:category_name`}
-            render={()=><QuestionForm
-            currentParam={this.state.currentState}
-            currentName={this.state.name}
-            handleCalculation={this.handleCalculation} />}
-          />
-        </div>
+    return (<div className="risico-indicatie">
+      <div className="risico-indicatie-header">
+        <Calculation calculation={this.state.calculation}/>
       </div>
-    )
+      <div className="risico-indicatie-content">
+        <Categories match={match} handleParams={this.handleParams}/>
+        <Route path={`${match.path}/:category_name`} render={() =>< QuestionForm
+          currentParam = {
+            this.state.currentState
+          }
+          currentName = {
+            this.state.name
+          }
+          handleCalculation = {
+            this.handleCalculation
+          } />}/>
+      </div>
+    </div>)
   }
 }
-
 
 export default withRouter(RisicoIndicatie)

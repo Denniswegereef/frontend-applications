@@ -55,6 +55,9 @@
   - [X] Reusuable input UI elements
   - [ ] Use REDUX to store the data and calculations
   - [X] Make it visual appealing
+  - [X] Fixing router bugs like 404 and the substates
+  - [X] When you choose in the URL a category that doesn't exist, don't show it and throw that fat juicy error
+  - [X] Adding a linter
 
 ### Possible ideas to make
 - [X] Introduction page, popup, wizard whatever

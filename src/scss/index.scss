@@ -4,3 +4,12 @@
   display: flex;
   padding-left: 90px;
 }
+
+.content {
+  padding: $paddingDefault * 3 $paddingDefault * 2;
+  max-width: 800px;
+
+  p {
+    line-height: 1.4rem;
+  }
+}

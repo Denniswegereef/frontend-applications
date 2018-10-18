@@ -10,15 +10,17 @@ import mail from '../../images/home-icons/mail.svg';
 const Header = () => {
   return (<header className="header">
     <div className="header-user">
-      {`Kind
+      {
+        `Kind
         veilig
-        thuis`}
+        thuis`
+      }
     </div>
     <div className="header-navigation">
 
       <ul>
         <li>
-          <NavLink exact to="/">
+          <NavLink exact="exact" to="/">
             <img src={home}/>
           </NavLink>
         </li>

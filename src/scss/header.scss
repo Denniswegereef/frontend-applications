@@ -11,23 +11,27 @@
   position: fixed;
   left: 0;
   padding-top: 5rem;
+
   &-user {
     color: $white;
     text-align: center;
     font-weight: bold;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
+
   &-navigation {
     width: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
+
     ul {
       margin: 0;
       padding: 0;
       list-style-type: none;
       width: 100%;
+
       li {
         margin: $marginDefault * 1.5 0;
         cursor: pointer;
@@ -36,9 +40,11 @@
         justify-content: center;
         width: inherit;
         position: relative;
+
         a {
           height: inherit;
           text-decoration: none;
+
           &:before {
             border-radius: 0 2px 2px 0;
             content: '';
@@ -48,13 +54,15 @@
             left: 0;
             transform: translateX(-8px);
             background-color: $lightColor;
-            transition: transform .2s ease-out;
+            transition: transform 0.2s ease-out;
           }
+
           &:hover {
             &:before {
               transform: translateX(-2px);
             }
           }
+
           &.active {
             &:before {
               transform: translateX(0);
@@ -63,6 +71,7 @@
         }
       }
     }
+
     img {
       width: 28px;
     }

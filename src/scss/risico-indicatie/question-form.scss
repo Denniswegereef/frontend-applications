@@ -3,6 +3,7 @@
 .risico-indicatie-questionForm {
   position: relative;
   margin: 0 1rem;
+
   &-content {
     position: absolute;
     width: 100%;
@@ -11,10 +12,12 @@
     height: 100%;
     padding: $paddingDefault * 2;
     box-shadow: -3px 10px 50px -10px $lightColor;
+
     h2 {
       margin-bottom: $marginDefault;
     }
   }
+
   form {
     label {
       width: 100%;

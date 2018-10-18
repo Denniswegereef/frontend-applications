@@ -16,12 +16,14 @@
     grid-template-columns: 1fr 1fr 1fr;
 
     li {
-      padding: .2rem;
+      padding: 0.2rem;
+
       img {
         width: 20px;
       }
+
       a {
-        padding: .7rem;
+        padding: 0.7rem;
         border-radius: 5px;
         display: flex;
         align-items: center;
@@ -42,10 +44,12 @@
           padding: 0;
           font-size: 0.7rem;
         }
+
         &:hover {
           background-color: $lightColor;
         }
       }
+
       .active {
         background-color: $lightColor;
       }

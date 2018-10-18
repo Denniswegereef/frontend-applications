@@ -5,9 +5,10 @@
   top: -30px;
   right: 0;
   color: $lightColor;
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
   text-decoration: underline;
   cursor: pointer;
+
   &:hover {
     transform: translateX(-3px);
   }
