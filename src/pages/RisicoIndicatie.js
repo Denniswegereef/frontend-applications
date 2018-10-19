@@ -12,7 +12,8 @@ class RisicoIndicatie extends Component {
     super(props);
     this.state = {
       currentState: this.props.location.pathname.split("/").pop(),
-      calculation: null
+      calculation: null,
+      amount: 0
     };
   }
 
@@ -22,7 +23,7 @@ class RisicoIndicatie extends Component {
       let currentValue = Number(weight.replace(",", "."))
 
       this.setState({
-        calculation: currentValue
+        calculation: Math.round(this.state.calculation += currentValue)
       })
     }
   }
