@@ -35,6 +35,7 @@ class QuestionForm extends Component {
 
   componentDidMount() {
     this.handleLocalStorage()
+    console.log(this.props)
   }
 
   // Trigger a function when new props enter the component
@@ -87,7 +88,7 @@ class QuestionForm extends Component {
 
         <QuestionReset handleClear={this.handleClear}/>
 
-        <h2>Vragen over {this.props.currentParam}</h2>
+        <h2>Vragen over {this.props.currentParam.replace(/[-\s]/g," ")}</h2>
         <form action="">
           <label type="radio">
             <input type="radio" checked={!localStorage.getItem(this.props.currentParam) || localStorage.getItem(this.props.currentParam) === 'onbekend'} name={this.props.currentParam} onChange={() => {

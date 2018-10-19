@@ -10,7 +10,7 @@ class Calculation extends Component {
     return (<div className="risico-indicatie-calculation">
       <h2>Calculation</h2>
       <span>
-        {this.props.calculation || 0}%</span>
+        {this.props.calculation * 10|| 0}%</span>
     </div>)
   }
 }
