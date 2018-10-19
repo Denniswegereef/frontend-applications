@@ -70,6 +70,18 @@
 - [ ] An option to add notes to it
 - [ ] Import and export answers and notes
 
+### How to install
+
+Clone this repository
+
+`cd frontend-applications`
+
+Run `npm install` in the terminal
+
+Start the dev server with `npm run start`
+
+Create a final build with `npm run build`
+
 ## Conclusion
 
 Well I made it in about a week from learning to actually creating a product with it. I'm quite proud of that but when I look at the final thing on the page it took so many iterations just only under the hood. Trying to use the right tools in react for it. I found it really fun to try something new and I love react more than vue actually. You have alot more things to say and think of your own, what I really do love. But some small parts took a-lot of time. If I had to build it now again I would definitely give it another structure of components and how they should talk and react:) with each-other.

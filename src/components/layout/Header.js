@@ -20,18 +20,18 @@ const Header = () => {
 
       <ul>
         <li>
-          <NavLink exact="exact" to="/">
-            <img src={home}/>
+          <NavLink exact to="/">
+            <img src={home} alt={home}/>
           </NavLink>
         </li>
         <li>
           <NavLink to="/risico-indicatie">
-            <img src={calculator}/>
+            <img src={calculator} alt={home}/>
           </NavLink>
         </li>
         <li>
           <NavLink to="/contact">
-            <img src={mail}/>
+            <img src={mail} alt={home}/>
           </NavLink>
         </li>
       </ul>

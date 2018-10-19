@@ -17,7 +17,7 @@ class Categories extends Component {
     // Match is the current siub-state
     const match = this.props.match.url
 
-    // Loop over the data, put it in a new array with unique categories
+    // Loop over the data, put it in a new array with unique categories thanks to titus
     const categories = questions.map(question => question.Categorie).filter((catagorie, index, all) => all.indexOf(catagorie) === index)
 
     // Print the list items
@@ -29,7 +29,7 @@ class Categories extends Component {
         <NavLink to={`${match}/${slugifyName}`} onClick={() => {
             this.props.handleParams(slugifyName, question)
           }}>
-          <img src={testFlask}/>
+          <img src={testFlask} alt={testFlask}/>
           <p>{question}</p>
         </NavLink>
       </li>)

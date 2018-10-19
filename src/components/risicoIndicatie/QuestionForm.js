@@ -5,12 +5,22 @@ import slugify from 'slugify'
 import '../../scss/risico-indicatie/question-form.scss'
 import QuestionReset from '../UI/QuestionReset.js'
 
+import {BrowserRouter as Router, Route} from "react-router-dom";
+
 class QuestionForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentParam: null
     }
+  }
+
+  handleClear = () => {
+    console.log('clear')
+    localStorage.clear()
+    Router.push('/')
+
+    // browserHistory.push('/risico-indicatie')
   }
 
   handleLocalStorage = (category, value) => {
@@ -45,7 +55,7 @@ class QuestionForm extends Component {
 
     this.handleLocalStorage(category, value)
 
-    this.props.handleCalculation(weight)
+    this.props.handleCalculation(category, weight)
   }
 
   render() {
@@ -70,18 +80,18 @@ class QuestionForm extends Component {
             }} value={currentQuestion.Coefficients}/>
           <span>{currentQuestion.Name}</span>
         </label>)
-      }
+      } else { return true}
     })
     return (<div className="risico-indicatie-questionForm">
       <div className="risico-indicatie-questionForm-content">
 
-        <QuestionReset/>
+        <QuestionReset handleClear={this.handleClear}/>
 
         <h2>Vragen over {this.props.currentParam}</h2>
         <form action="">
           <label type="radio">
             <input type="radio" checked={!localStorage.getItem(this.props.currentParam) || localStorage.getItem(this.props.currentParam) === 'onbekend'} name={this.props.currentParam} onChange={() => {
-                this.handleActive(this.props.currentParam, 'onbekend')
+                this.handleActive(this.props.currentParam, 'onbekend', '0')
               }}/>
             <span>Onbekend</span>
           </label>

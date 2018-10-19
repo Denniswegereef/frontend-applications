@@ -5,7 +5,7 @@ class Calculation extends Component {
   componentDidMount() {
     console.log(this)
   }
-  componentDidUpdate() {}
+
   render() {
     return (<div className="risico-indicatie-calculation">
       <h2>Calculation</h2>
