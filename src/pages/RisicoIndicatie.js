@@ -42,7 +42,7 @@ class RisicoIndicatie extends Component {
       </div>
       <div className="risico-indicatie-content">
         <Categories match={match} handleParams={this.handleParams}/>
-        <Route exact path={`${match.path}/:category_name`} render={() =>< QuestionForm
+        <Route exact="exact" path={`${match.path}/:category_name`} render={() =>< QuestionForm
           currentParam = {
             this.state.currentState
           }

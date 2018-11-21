@@ -18,7 +18,8 @@ class Categories extends Component {
     const match = this.props.match.url
 
     // Loop over the data, put it in a new array with unique categories thanks to titus
-    const categories = questions.map(question => question.Categorie).filter((catagorie, index, all) => all.indexOf(catagorie) === index)
+    const categories = questions.map(
+      question => question.Categorie).filter((catagorie, index, all) => all.indexOf(catagorie) === index)
 
     // Print the list items
     const categorie_single = categories.map(question => {
